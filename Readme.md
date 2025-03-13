@@ -6,7 +6,12 @@ This project includes three C++ programs that analyze floating-point compression
 
 ## Files
 
-### 1. `32-16bit_MSE.cpp`
+### 1. `Task-report.md`
+- This file contains a detailed report and analysis on lossy Floating-point Compression : Understanding Storage Saving vs Precision loss 
+**Description:**
+This document presents an experiment on lossy floating-point compression by zeroing out the least significant bits (LSBs) of the mantissa and analyzing its impact on storage savings and precision loss. Key findings reveal that bitwise manipulation alone does not reduce file size due to the fixed IEEE 754 format, but combining it with gzip compression or reducing bit-width (e.g., 32-bit to 16-bit) achieves meaningful storage savings. The study identifies optimal trade-offs between precision retention and compression efficiency, highlighting effective strategies for reducing storage without significant loss of accuracy.
+
+### 2. `32-16bit_MSE.cpp`
 
 **Description:**
 - Converts 32-bit floating-point numbers to 16-bit IEEE 754 half-precision format.
@@ -22,7 +27,7 @@ This project includes three C++ programs that analyze floating-point compression
 **Output:**
 - Prints file sizes, error metrics, and compression savings.
 
-### 2. `distributions_mse.cpp`
+### 3. `distributions_mse.cpp`
 
 **Description:**
 - Generates random numbers from Uniform, Gaussian, and Exponential distributions.
@@ -40,7 +45,7 @@ This project includes three C++ programs that analyze floating-point compression
 - Prints MSE for different distributions.
 - Displays storage savings and statistical differences.
 
-### 3. `og-vs-com_gzip.cpp`
+### 4. `og-vs-com_gzip.cpp`
 
 **Description:**
 - Generates a dataset of uniform random floating-point numbers.
