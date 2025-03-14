@@ -7,7 +7,8 @@ This project includes three C++ programs that analyze floating-point compression
 ## Files
 
 ### 1. `Task-report.md`
-- This file contains a detailed report and analysis on lossy Floating-point Compression : Understanding Storage Saving vs Precision loss 
+- This file contains a detailed report and analysis on lossy Floating-point Compression : Understanding Storage Saving vs Precision loss
+  
 **Description:**
 This document presents an experiment on lossy floating-point compression by zeroing out the least significant bits (LSBs) of the mantissa and analyzing its impact on storage savings and precision loss. Key findings reveal that bitwise manipulation alone does not reduce file size due to the fixed IEEE 754 format, but combining it with gzip compression or reducing bit-width (e.g., 32-bit to 16-bit) achieves meaningful storage savings. The study identifies optimal trade-offs between precision retention and compression efficiency, highlighting effective strategies for reducing storage without significant loss of accuracy.
 
