@@ -61,6 +61,17 @@ This graph illustrates the percentage of storage savings achieved using differen
 
 ![storage_savings](https://github.com/user-attachments/assets/871b477f-3029-4473-8f05-7e5720d254a0)
 
+2. MSE vs. Compression Techniques
+
+This plot shows the Mean Squared Error (MSE) introduced by each compression technique. It highlights the trade-off between compression and data accuracy. 
+
+![MSE_vs_Techniques](https://github.com/user-attachments/assets/afb2fa17-4e04-4d85-8bfa-e9a643e5fdef)
+
+3. Storage Savings vs. MSE (Sweet Spot Analysis)
+
+This graph helps identify the optimal compression technique that provides the best balance between storage savings and minimal loss in precision. The "Sweet Spot" is highlighted, representing the most efficient technique.
+
+![sweet_spot](https://github.com/user-attachments/assets/dbd37a95-0a33-4bab-aa94-22df3e6ec3e0)
 
 ## Finding the Sweet Spot
 To determine the best trade-off between storage savings and precision loss, we calculated a **Compression Efficiency Metric**:
