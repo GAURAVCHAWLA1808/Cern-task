@@ -53,6 +53,15 @@ To achieve actual file size reduction, we explored two additional techniques:
 | 16-bit zeroing + gzip       | 3.81              | 1.60              | 58.1%           | 2.90e-06      |
 | 32-bit to 16-bit conversion | 3.81              | 1.90              | 50.0%           | 171799        |
 
+
+## Graph Analysis
+1. Storage Savings vs. Compression Techniques
+
+This graph illustrates the percentage of storage savings achieved using different compression techniques. It helps visualize how various methods impact storage efficiency.
+
+![storage_savings](https://github.com/user-attachments/assets/871b477f-3029-4473-8f05-7e5720d254a0)
+
+
 ## Finding the Sweet Spot
 To determine the best trade-off between storage savings and precision loss, we calculated a **Compression Efficiency Metric**:
 
