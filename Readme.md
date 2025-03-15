@@ -78,13 +78,13 @@ A detailed analysis is available in Task-report.md.
 
 ```sh
 # Compile the programs
-g++ 32-16bit_MSE.cpp -o 32-16bit_MSE
+g++ -std=c++17 32-16bit_MSE.cpp -o 32-16bit_MSE
 ./32-16bit_MSE
 
-g++ distributions_mse.cpp -o distributions_mse
+g++ -std=c++17 distributions_mse.cpp -o distributions_mse
 ./distributions_mse
 
-g++ og-vs-com_gzip.cpp -o og-vs-com_gzip
+g++ -std=c++17 og-vs-com_gzip.cpp -o og-vs-com_gzip
 ./og-vs-com_gzip
 ```
 
