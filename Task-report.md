@@ -49,6 +49,7 @@ To achieve actual file size reduction, we explored two additional techniques:
 | No Compression              | 3.81              | 3.81              | 0%              | 0.0           |
 | gzip Compression            | 3.81              | 3.42              | 10.2%           | 0.0           |
 | 8-bit zeroing + gzip        | 3.81              | 2.72              | 28.6%           | 4.41e-11      |
+| 10-bit zeroing + gzip       | 3.81              | 2.47              | 35.04%          | 7.08e-10      |
 | 12-bit zeroing + gzip       | 3.81              | 2.14              | 43.8%           | 1.13e-08      |
 | 16-bit zeroing + gzip       | 3.81              | 1.60              | 58.1%           | 2.90e-06      |
 | 32-bit to 16-bit conversion | 3.81              | 1.90              | 50.0%           | 171799        |

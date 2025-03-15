@@ -60,7 +60,7 @@ A detailed analysis is available in Task-report.md.
 
 **Description:**
 - Generates a dataset of uniform random floating-point numbers.
-- Applies different levels of LSB zeroing (8, 12, 16 bits).
+- Applies different levels of LSB zeroing (8, 10 , 12, 16 bits).
 - Computes MSE for each compression level.
 - Saves data and compresses it using Gzip.
 - Compares storage savings from LSB zeroing vs. Gzip compression.
@@ -77,15 +77,23 @@ A detailed analysis is available in Task-report.md.
 ## How to Run
 
 ```sh
-# Compile the programs
+# 32-16bit_MSE.cpp
 g++ -std=c++17 32-16bit_MSE.cpp -o 32-16bit_MSE
 ./32-16bit_MSE
 
+#distributions_mse.cpp
 g++ -std=c++17 distributions_mse.cpp -o distributions_mse
 ./distributions_mse
 
+#og-vs-com_gzip.cpp
 g++ -std=c++17 og-vs-com_gzip.cpp -o og-vs-com_gzip
 ./og-vs-com_gzip
+
+#root_ploting 
+# To compile the program, replace `<filename>` with your actual output filename:
+g++ -o <filename> root_plotting/<filename>.cpp $(root-config --cflags --glibs)
+./<filename>
+
 ```
 
 ## Dependencies

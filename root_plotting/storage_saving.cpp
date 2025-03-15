@@ -4,13 +4,13 @@
 #include <TAxis.h>
 #include <TLatex.h>
 
-const int numTechniques = 6;
+const int numTechniques = 7;
 const char* techniques[numTechniques] = {
-    "No Compression", "gzip", "8-bit Zeroing + gzip",
+    "No Compression", "gzip", "8-bit Zeroing + gzip","10-bit Zeroing + gzip",
     "12-bit Zeroing + gzip", "16-bit Zeroing + gzip", "32-bit to 16-bit"
 };
 
-double storage_savings[numTechniques] = {0, 10.2, 28.6, 43.8, 58.1, 50.0};
+double storage_savings[numTechniques] = {0, 10.2, 28.6, 35.04,43.8, 58.1, 50.0};
 
 // Storage Savings vs Techniques
 void plotStorageSavings() {

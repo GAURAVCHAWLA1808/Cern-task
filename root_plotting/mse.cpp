@@ -3,11 +3,11 @@
 #include <TStyle.h>
 
 void simulation() {
-    const int n = 6; // Number of compression techniques
+    const int n = 7; // Number of compression techniques
 
-    const char* techniques[n] = {"Uncompressed", "Gzip", "8 bit+gzip", "12bit+Gzip", "16bit+Gzip","32-16 bit"};
+    const char* techniques[n] = {"Uncompressed", "Gzip", "8 bit+gzip","10 bit+gzip",  "12bit+Gzip", "16bit+Gzip","32-16 bit"};
 
-    double mse[n] = {0, 0 , 4.41e-11, 1.13e-08, 2.90e-06,171799 }; 
+    double mse[n] = {0, 0 , 4.40947e-11, 7.0837e-10,1.13422e-08, 2.90112e-06 ,171799 }; 
 
     TCanvas *c1 = new TCanvas("c1", "MSE vs. Compression Techniques", 800, 600);
     gStyle->SetOptStat(0); 
@@ -27,7 +27,7 @@ void simulation() {
     h1->Draw("bar"); 
 
     c1->Update(); 
-    c1->SaveAs("MSE_vs_Techniques.png");
+    c1->SaveAs("mse.png");
     c1->Draw(); 
 }
 
