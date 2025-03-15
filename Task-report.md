@@ -80,7 +80,7 @@ To determine the best trade-off between storage savings and precision loss, we c
 Compression Efficiency = Storage Savings (%)​ / MSE 
 
 - **8-bit zeroing + gzip** is the most efficient method, offering **28.6% storage savings** with minimal precision loss (**MSE = 4.41e-11**).
-- **10-bit zeroing (Uniform Distribution) + gzip** is another strong option, providing **35% storage savings** with an **MSE of 7.07e-10**.
+- **10-bit zeroing + gzip** is another strong option, providing **35% storage savings** with an **MSE of 7.07e-10**.
 - **16-bit zeroing or 32-bit to 16-bit conversion** results in excessive precision loss, making them less ideal for precision-critical applications.
 
 ## Conclusion & Key Takeaways
