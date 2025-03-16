@@ -56,6 +56,8 @@ To achieve actual file size reduction, we explored two additional techniques:
 
 ### Storage Savings and Precision Loss
 
+## Uniform Distribution
+
 | Method                      | Original Size (MB) | Compressed Size (MB) | Storage Savings (%) | MSE   |
 |-----------------------------|-------------------|-------------------|-----------------|---------------|
 | No Compression              | 3.81              | 3.81              | 0%              | 0.0           |
@@ -92,8 +94,30 @@ To determine the best trade-off between storage savings and precision loss, we c
 Compression Efficiency = Storage Savings (%)​ / MSE 
 
 - **8-bit zeroing + gzip** is the most efficient method, offering **28.6% storage savings** with minimal precision loss (**MSE = 4.41e-11**).
-- **10-bit zeroing (Uniform Distribution) + gzip** is another strong option, providing **35% storage savings** with an **MSE of 7.07e-10**.
+- **10-bit zeroing  + gzip** is another strong option, providing **35% storage savings** with an **MSE of 7.07e-10**.
 - **16-bit zeroing or 32-bit to 16-bit conversion** results in excessive precision loss, making them less ideal for precision-critical applications.
+
+#### Gaussian Distribution
+
+| Method                     | Original Size (MB) | Compressed Size (MB) | Storage Savings (%) | MSE         |
+|----------------------------|--------------------|----------------------|---------------------|-------------|
+| 32-bit to 16-bit conversion| 3.81               | 1.90                 | 50.0%               | 8.27386e-05 |
+| gzip Compression           | 3.81               | 3.53                 | 7.3%                | 0.0         |
+| 8-bit zeroing + gzip       | 3.81               | 2.87                 | 24.7%               | 1.6735e-10  |
+| 10-bit zeroing + gzip      | 3.81               | 2.68                 | 29.7%               | 2.69561e-09 |
+| 12-bit zeroing + gzip      | 3.81               | 2.42                 | 36.4%               | 4.32203e-08 |
+| 16-bit zeroing + gzip      | 3.81               | 1.79                 | 53.1%               | 1.09706e-05 |
+
+#### Exponential Distribution
+
+| Method                     | Original Size (MB) | Compressed Size (MB) | Storage Savings (%) | MSE         |
+|----------------------------|--------------------|----------------------|---------------------|-------------|
+| 32-bit to 16-bit conversion| 3.81               | 1.90                 | 50.0%               | 0.000140414 |
+| gzip Compression           | 3.81               | 3.47                 | 8.9%                | 0.0         |
+| 8-bit zeroing + gzip       | 3.81               | 2.79                 | 26.8%               | 3.33151e-10 |
+| 10-bit zeroing + gzip      | 3.81               | 2.58                 | 32.3%               | 5.33735e-09 |
+| 12-bit zeroing + gzip      | 3.81               | 2.27                 | 40.5%               | 8.55999e-08 |
+| 16-bit zeroing + gzip      | 3.81               | 1.69                 | 55.6%               | 2.18084e-05 |
 
 ## Conclusion & Key Takeaways
 
