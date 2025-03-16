@@ -7,7 +7,7 @@ void simulation() {
 
     const char* techniques[n] = {"Uncompressed", "Gzip", "8 bit+gzip","10 bit+gzip",  "12bit+Gzip", "16bit+Gzip","32-16 bit"};
 
-    double mse[n] = {0, 0 , 4.40947e-11, 7.0837e-10,1.13422e-08, 2.90112e-06 ,171799 }; 
+    double mse[n] = {0, 0 , 1.6735e-10, 2.69561e-09,4.32203e-08, 1.09706e-05 ,8.27386e-05 }; 
 
     TCanvas *c1 = new TCanvas("c1", "MSE vs. Compression Techniques", 800, 600);
     gStyle->SetOptStat(0); 

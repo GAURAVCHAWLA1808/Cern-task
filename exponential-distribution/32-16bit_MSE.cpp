@@ -4,6 +4,10 @@
 #include <cstdint>
 #include <cmath>
 #include <limits>
+#include <random>
+#include <sys/stat.h>
+#include <cstdlib>  
+
 
 // Function to convert float to IEEE 754 16-bit half-precision with rounding
 uint16_t floatToHalf(float value) {
@@ -38,13 +42,16 @@ float halfToFloat(uint16_t h) {
 }
 
 int main() {
-    const int N = 1000000;
-    std::vector<float> data(N);
 
-    // Generate sample uniform distribution data
-    for (int i = 0; i < N; i++) {
-        data[i] = static_cast<float>(rand()) / RAND_MAX;
+      size_t N = 1000000;
+    std::vector<float> data(N);
+    std::default_random_engine generator;
+    std::exponential_distribution<float> distribution(1.0);
+    
+    for (size_t i = 0; i < N; i++) {
+          data[i] = distribution(generator);
     }
+   
 
     // Save full-precision (32-bit) floating point data
     std::ofstream fullFile("full_precision.bin", std::ios::binary);

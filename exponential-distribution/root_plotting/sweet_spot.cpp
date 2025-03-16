@@ -10,11 +10,11 @@
 const int numTechniques = 7;
 const char* techniques[numTechniques] = {
     "No Compression", "gzip", "8-bit Zeroing + gzip","10-bit Zeroing + gzip",
-    "12-bit Zeroing + gzip", "16-bit Zeroing + gzip", "32-bit to 16-bit"
+    "12-bit Zeroing + gzip", "16-bit Zeroing + gzip", "32-16 bit"
 };
 
-double storage_savings[numTechniques] = {0, 10.2, 28.6,35.04, 43.8, 58.1, 50.0};
-double mse[numTechniques] = {0.0, 0.0, 4.41e-11,7.0837e-10 , 1.13e-08, 2.90e-06, 171799};
+double storage_savings[numTechniques] = {0, 9.12, 26.81, 32.28,40.47, 55.63 , 50.0};
+double mse[numTechniques] = {0, 0 , 3.33151e-10, 5.33735e-09,8.55999e-08, 2.18084e-05 , 1.40414e-04 };
 
 // Find the best compression technique
 int findSweetSpotIndex() {

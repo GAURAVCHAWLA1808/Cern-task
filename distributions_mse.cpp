@@ -88,6 +88,8 @@ int main() {
     vector<float> compressed_uniform = compress_data(uniform_data, bits_to_zero);
     vector<float> compressed_gaussian = compress_data(gaussian_data, bits_to_zero);
     vector<float> compressed_exponential = compress_data(exponential_data, bits_to_zero);
+
+
     
     // Save to binary files
     save_binary("uniform_original.bin", uniform_data);

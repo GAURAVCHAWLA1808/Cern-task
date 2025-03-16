@@ -10,7 +10,7 @@ const char* techniques[numTechniques] = {
     "12-bit Zeroing + gzip", "16-bit Zeroing + gzip", "32-bit to 16-bit"
 };
 
-double storage_savings[numTechniques] = {0, 10.2, 28.6, 35.04,43.8, 58.1, 50.0};
+double storage_savings[numTechniques] = {0, 7.37, 24.89, 29.70,36.63 , 53.09, 50.0};
 
 // Storage Savings vs Techniques
 void plotStorageSavings() {

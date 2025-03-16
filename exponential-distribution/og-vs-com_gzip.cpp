@@ -54,7 +54,9 @@ int main() {
     size_t N = 1000000;
     std::vector<float> original_data(N);
     std::default_random_engine generator;
-    std::uniform_real_distribution<float> distribution(0.0, 1.0);
+    std::exponential_distribution<float> distribution(1.0);
+
+
     
     for (size_t i = 0; i < N; i++) {
         original_data[i] = distribution(generator);
@@ -107,10 +109,10 @@ int main() {
 
     std::cout << "\nAfter gzip compression:\n";
     std::cout << "Original Compressed: " << original_gz_size / (1024.0 * 1024) << " MB\n";
-    std::cout << "Compressed 8 Bits (gzip): " << compressed_8_gz_size / (1024.0 * 1024) << " MB\n";
-    std::cout << "Compressed 10 Bits (gzip): " << compressed_10_gz_size / (1024.0 * 1024) << " MB\n";
-    std::cout << "Compressed 12 Bits (gzip): " << compressed_12_gz_size / (1024.0 * 1024) << " MB\n";
-    std::cout << "Compressed 16 Bits (gzip): " << compressed_16_gz_size / (1024.0 * 1024) << " MB\n";
+    std::cout << "Compressed 8 Bits  + (gzip): " << compressed_8_gz_size / (1024.0 * 1024) << " MB\n";
+    std::cout << "Compressed 10 Bits + (gzip): " << compressed_10_gz_size / (1024.0 * 1024) << " MB\n";
+    std::cout << "Compressed 12 Bits + (gzip): " << compressed_12_gz_size / (1024.0 * 1024) << " MB\n";
+    std::cout << "Compressed 16 Bits + (gzip): " << compressed_16_gz_size / (1024.0 * 1024) << " MB\n";
 
     // Display MSE values
     std::cout << "\nMean Squared Error (MSE):\n";
@@ -121,4 +123,3 @@ int main() {
 
     return 0;
 }
-
