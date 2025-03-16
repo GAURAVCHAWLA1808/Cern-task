@@ -97,7 +97,7 @@ Compression Efficiency = Storage Savings (%)​ / MSE
 - **10-bit zeroing  + gzip** is another strong option, providing **35% storage savings** with an **MSE of 7.07e-10**.
 - **16-bit zeroing or 32-bit to 16-bit conversion** results in excessive precision loss, making them less ideal for precision-critical applications.
 
-#### Gaussian Distribution
+## Gaussian Distribution
 
 | Method                     | Original Size (MB) | Compressed Size (MB) | Storage Savings (%) | MSE         |
 |----------------------------|--------------------|----------------------|---------------------|-------------|
@@ -108,7 +108,7 @@ Compression Efficiency = Storage Savings (%)​ / MSE
 | 12-bit zeroing + gzip      | 3.81               | 2.42                 | 36.4%               | 4.32203e-08 |
 | 16-bit zeroing + gzip      | 3.81               | 1.79                 | 53.1%               | 1.09706e-05 |
 
-#### Exponential Distribution
+## Exponential Distribution
 
 | Method                     | Original Size (MB) | Compressed Size (MB) | Storage Savings (%) | MSE         |
 |----------------------------|--------------------|----------------------|---------------------|-------------|
