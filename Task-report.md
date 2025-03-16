@@ -93,7 +93,7 @@ To determine the best trade-off between storage savings and precision loss, we c
 
 Compression Efficiency = Storage Savings (%)​ / MSE 
 
-- **8-bit zeroing + gzip** is the most efficient method, offering **28.6% storage savings** with minimal precision loss (**MSE = 4.41e-11**).
+- **8-bit zeroing + gzip** is the most efficient method, offering **28.6% storage savings** with minimal precision loss (**MSE = 4.41e-       11**).
 - **10-bit zeroing  + gzip** is another strong option, providing **35% storage savings** with an **MSE of 7.07e-10**.
 - **16-bit zeroing or 32-bit to 16-bit conversion** results in excessive precision loss, making them less ideal for precision-critical applications.
 
@@ -108,6 +108,35 @@ Compression Efficiency = Storage Savings (%)​ / MSE
 | 12-bit zeroing + gzip      | 3.81               | 2.42                 | 36.4%               | 4.32203e-08 |
 | 16-bit zeroing + gzip      | 3.81               | 1.79                 | 53.1%               | 1.09706e-05 |
 
+## Graph Analysis
+1. Storage Savings vs. Compression Techniques
+
+This graph illustrates the percentage of storage savings achieved using different compression techniques. It helps visualize how various methods impact storage efficiency.
+
+![image](https://github.com/user-attachments/assets/a92dbf5a-abd0-4f20-810c-938bd48262f3)
+
+2. MSE vs. Compression Techniques
+
+This plot shows the Mean Squared Error (MSE) introduced by each compression technique. It highlights the trade-off between compression and data accuracy. 
+
+![image](https://github.com/user-attachments/assets/0d1bdf93-1978-4f50-a97d-2d8ddd0d9bb9)
+
+3. Storage Savings vs. MSE (Sweet Spot Analysis)
+
+This graph helps identify the optimal compression technique that provides the best balance between storage savings and minimal loss in precision. The "Sweet Spot" is highlighted, representing the most efficient technique.
+
+![image](https://github.com/user-attachments/assets/60d9a00a-b1c9-4a49-8ef1-2820d6cb81cf)
+
+ ## Finding the Sweet Spot
+
+To determine the best trade-off between storage savings and precision loss, we calculated a **Compression Efficiency Metric**:
+
+**Compression Efficiency = Storage Savings (%) / MSE**   
+
+- **8-bit zeroing + gzip** is the most efficient method, offering **24.7% storage savings** with minimal precision loss (**MSE = 1.6735e-     10**).
+- **10-bit zeroing + gzip** is another strong option, providing **29.7% storage savings** with an **MSE of 2.69561e-09**.
+- **16-bit zeroing or 32-bit to 16-bit conversion** results in excessive precision loss, making them less ideal for precision-critical applications.
+
 ## Exponential Distribution
 
 | Method                     | Original Size (MB) | Compressed Size (MB) | Storage Savings (%) | MSE         |
@@ -118,6 +147,36 @@ Compression Efficiency = Storage Savings (%)​ / MSE
 | 10-bit zeroing + gzip      | 3.81               | 2.58                 | 32.3%               | 5.33735e-09 |
 | 12-bit zeroing + gzip      | 3.81               | 2.27                 | 40.5%               | 8.55999e-08 |
 | 16-bit zeroing + gzip      | 3.81               | 1.69                 | 55.6%               | 2.18084e-05 |
+
+## Graph Analysis
+
+1. Storage Savings vs. Compression Techniques
+
+This graph illustrates the percentage of storage savings achieved using different compression techniques. It helps visualize how various methods impact storage efficiency.
+
+![image](https://github.com/user-attachments/assets/06bc55ca-cea0-4ef3-b9d9-df73a2b80f9b)
+
+2. MSE vs. Compression Techniques
+
+This plot shows the Mean Squared Error (MSE) introduced by each compression technique. It highlights the trade-off between compression and data accuracy. 
+
+![image](https://github.com/user-attachments/assets/f627ef88-069d-4a20-a983-506b985ab25c)
+
+3. Storage Savings vs. MSE (Sweet Spot Analysis)
+
+This graph helps identify the optimal compression technique that provides the best balance between storage savings and minimal loss in precision. The "Sweet Spot" is highlighted, representing the most efficient technique.
+
+![image](https://github.com/user-attachments/assets/eb859726-0f43-406e-a0c0-c1afc4ab5a39)
+
+ ## Finding the Sweet Spot
+
+To determine the best trade-off between storage savings and precision loss, we calculated a **Compression Efficiency Metric**:
+
+**Compression Efficiency = Storage Savings (%) / MSE**  
+
+- **8-bit zeroing + gzip** is the most efficient method, offering **26.8% storage savings** with minimal precision loss (**MSE = 3.33151e-    10**).
+- **10-bit zeroing + gzip** is another strong option, providing **32.3% storage savings** with an **MSE of 5.33735e-09**.
+- **16-bit zeroing or 32-bit to 16-bit conversion** results in excessive precision loss, making them less ideal for precision-critical applications.
 
 ## Conclusion & Key Takeaways
 
