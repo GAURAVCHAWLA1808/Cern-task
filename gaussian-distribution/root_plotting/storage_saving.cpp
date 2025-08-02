@@ -12,7 +12,7 @@ const char* techniques[numTechniques] = {
 
 double storage_savings[numTechniques] = {0, 7.37, 24.89, 29.70,36.63 , 53.09, 50.0};
 
-// Storage Savings vs Techniques
+// To Storage Savings vs Techniques
 void plotStorageSavings() {
     TCanvas* c1 = new TCanvas("c1", "Storage Savings vs Techniques", 800, 600);
     TGraph* graph = new TGraph(numTechniques);

@@ -9,7 +9,7 @@
 #include <cstdlib>  
 
 
-// Function to convert float to IEEE 754 16-bit half-precision with rounding
+// This is a Function to convert float to IEEE 754 16-bit half-precision with rounding
 uint16_t floatToHalf(float value) {
     uint32_t f = *(uint32_t*)&value;
     uint16_t sign = (f >> 16) & 0x8000;
@@ -23,7 +23,7 @@ uint16_t floatToHalf(float value) {
     return sign | (exponent << 10) | (rounded_mantissa & 0x3FF);
 }
 
-// Function to convert 16-bit half-precision back to 32-bit float
+// This is a Function to convert 16-bit half-precision back to 32-bit float
 float halfToFloat(uint16_t h) {
     uint32_t sign = (h & 0x8000) << 16;
     uint32_t exponent = ((h & 0x7C00) >> 10);
@@ -53,23 +53,23 @@ int main() {
     }
    
 
-    // Save full-precision (32-bit) floating point data
+    // To Save full-precision (32-bit) floating point data
     std::ofstream fullFile("full_precision.bin", std::ios::binary);
     fullFile.write(reinterpret_cast<const char*>(data.data()), N * sizeof(float));
     fullFile.close();
 
-    // Convert to 16-bit half precision
+    //To Convert to 16-bit half precision
     std::vector<uint16_t> compressedData(N);
     for (int i = 0; i < N; i++) {
         compressedData[i] = floatToHalf(data[i]);
     }
 
-    // Save compressed (16-bit) floating point data
+    //To Save compressed (16-bit) floating point data
     std::ofstream compressedFile("compressed_half_precision.bin", std::ios::binary);
     compressedFile.write(reinterpret_cast<const char*>(compressedData.data()), N * sizeof(uint16_t));
     compressedFile.close();
 
-    // Compute Mean Squared Error (MSE) and Mean Absolute Error (MAE)
+    //To Compute Mean Squared Error (MSE) and Mean Absolute Error (MAE)
     double mse = 0.0;
     double mae = 0.0;
     double max_error = 0.0;
@@ -83,7 +83,7 @@ int main() {
     mse /= N;
     mae /= N;
 
-    // File size comparison
+    // To compare the file size
     std::cout << "Original Size: " << N * sizeof(float) / 1024.0 << " KB\n";
     std::cout << "Compressed Size: " << N * sizeof(uint16_t) / 1024.0 << " KB\n";
     std::cout << "Storage Savings: " 

@@ -16,7 +16,7 @@ const char* techniques[numTechniques] = {
 double storage_savings[numTechniques] = {0, 7.37, 24.89, 29.70,36.63 , 53.09, 50.0};
 double mse[numTechniques] = {0, 0 , 1.6735e-10, 2.69561e-09,4.32203e-08, 1.09706e-05 ,8.27386e-05  };
 
-// Find the best compression technique
+//This is to Find the best compression technique
 int findSweetSpotIndex() {
     double bestRatio = 0.0;
     int bestIndex = 0;
@@ -30,7 +30,7 @@ int findSweetSpotIndex() {
     return bestIndex;
 }
 
-// Plot Storage Savings vs MSE (Sweet Spot)
+//This is to Plot Storage Savings vs MSE (Sweet Spot)
 void plotSweetSpot() {
     TCanvas* c3 = new TCanvas("c3", "Storage Savings vs MSE (Sweet Spot)", 800, 600);
     TGraph* graph = new TGraph(numTechniques);
@@ -47,7 +47,7 @@ void plotSweetSpot() {
     graph->SetMarkerColor(kBlue);
     graph->Draw("APL");
 
-    // Highlight the sweet spot
+    // This is to Highlight the sweet spot
     int bestIndex = findSweetSpotIndex();
     TMarker* sweetSpot = new TMarker(mse[bestIndex] + 1e-10, storage_savings[bestIndex], 29);
     sweetSpot->SetMarkerColor(kRed);
@@ -59,7 +59,7 @@ void plotSweetSpot() {
     legend->AddEntry(sweetSpot, Form("Sweet Spot: %s", techniques[bestIndex]), "P");
     legend->Draw();
 
-    // Adjust label positions: spread them out to reduce clutter
+    //This is to Adjust label positions: spread them out to reduce clutter
     for (int i = 0; i < numTechniques; i++) {
         double x_offset = (i % 2 == 0) ? 1.4 : 1.1;  
         double y_offset = (i % 2 == 0) ? 2.8 : 1.8;  

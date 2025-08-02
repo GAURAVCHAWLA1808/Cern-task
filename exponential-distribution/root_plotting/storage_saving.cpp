@@ -12,7 +12,7 @@ const char* techniques[numTechniques] = {
 
 double storage_savings[numTechniques] = {0, 9.12, 26.81, 32.28,40.47, 55.63 , 50.0};
 
-// Storage Savings vs Techniques
+//This is to Storage Savings vs Techniques
 void plotStorageSavings() {
     TCanvas* c1 = new TCanvas("c1", "Storage Savings vs Techniques", 800, 600);
     TGraph* graph = new TGraph(numTechniques);
@@ -29,7 +29,7 @@ void plotStorageSavings() {
     graph->Draw("APL");
 
     for (int i = 0; i < numTechniques; i++) {
-        TLatex* tex = new TLatex(i + 0.1, storage_savings[i] + 2, techniques[i]);  // Shift right
+        TLatex* tex = new TLatex(i + 0.1, storage_savings[i] + 2, techniques[i]);  //To Shift right
         tex->SetTextSize(0.03);
         tex->Draw();
     }

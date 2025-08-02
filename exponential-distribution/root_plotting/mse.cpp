@@ -3,7 +3,7 @@
 #include <TStyle.h>
 
 void simulation() {
-    const int n = 7; // Number of compression techniques
+    const int n = 7; // This is a Number of compression techniques
 
     const char* techniques[n] = {"Uncompressed", "Gzip", "8 bit+gzip","10 bit+gzip",  "12bit+Gzip", "16bit+Gzip","32-16 bit"};
 
@@ -13,7 +13,7 @@ void simulation() {
     gStyle->SetOptStat(0); 
     c1->SetLogy(); 
 
-    // Create Histogram for Bar Graph
+    // To Create Histogram for Bar Graph
     TH1F *h1 = new TH1F("h1", "MSE for Different Compression Techniques;Compression Techniques;MSE ", n, 0, n);
     
     for (int i = 0; i < n; i++) {
